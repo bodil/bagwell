@@ -13,7 +13,7 @@
    preserveAspectRatio="xMidYMid meet"
    version="1.1"
    id="svg17"
-   sodipodi:docname="vector-trie-tail.svg"
+   sodipodi:docname="vector-trie-twenty-one.svg"
    inkscape:version="0.92.1 r15371">
   <metadata
      id="metadata21">
@@ -41,7 +41,7 @@
      id="namedview19"
      showgrid="false"
      inkscape:zoom="1.4202315"
-     inkscape:cx="868.54617"
+     inkscape:cx="814.56245"
      inkscape:cy="329.18637"
      inkscape:window-x="0"
      inkscape:window-y="88"
@@ -596,13 +596,24 @@
        y="81.021942"
        x="192.46237" />
   </g>
-  <rect
-     x="900.87079"
-     y="243.24072"
-     style="fill:#f0e68c;stroke:#000000;stroke-width:2.04386353px"
-     id="e1_rectangle-35"
-     width="37.146812"
-     height="79.956139" />
+  <g
+     id="g1105"
+     transform="translate(333.698,164.21029)">
+    <rect
+       height="79.956139"
+       width="37.146812"
+       id="e1_rectangle-35"
+       style="fill:#f0e68c;stroke:#000000;stroke-width:2.04386353px"
+       y="79.030426"
+       x="567.17279" />
+    <rect
+       height="79.956139"
+       width="37.146812"
+       id="e1_rectangle-3-6"
+       style="fill:#f0e68c;stroke:#000000;stroke-width:2.04386353px"
+       y="79.030426"
+       x="604.31958" />
+  </g>
   <g
      transform="translate(147.5138,349.51278)"
      id="g883-5-1">
@@ -764,8 +775,8 @@
        x="192.46237" />
   </g>
   <rect
-     x="1157.0963"
-     y="79.887733"
+     x="1155.6881"
+     y="430.53479"
      style="fill:#f0e68c;stroke:#000000;stroke-width:2.04386353px"
      id="e1_rectangle-6-2-0-6-3-6"
      width="37.146812"
@@ -823,6 +834,11 @@
      d="M 920.20225,322.14414 1042.5598,430.53479"
      id="path1109"
      inkscape:connector-curvature="0" />
+  <path
+     style="opacity:1;vector-effect:none;fill:none;fill-opacity:1;stroke:#000000;stroke-width:4;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#marker4380);marker-end:url(#marker4576)"
+     d="M 957.04547,323.1399 1175.1175,428.69075"
+     id="path1111"
+     inkscape:connector-curvature="0" />
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -833,6 +849,16 @@
        id="tspan4812"
        x="234.82352"
        y="551.06036">0</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="1151.5754"
+     y="552.46857"
+     id="text4818"><tspan
+       sodipodi:role="line"
+       id="tspan4816"
+       x="1151.5754"
+       y="552.46857">20</tspan></text>
   <text
      xml:space="preserve"
      style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
@@ -972,22 +998,22 @@
      width="37.146812"
      height="79.956139" />
   <rect
-     x="1194.2432"
-     y="79.887733"
+     x="1192.835"
+     y="430.53479"
      style="fill:#f0e68c;fill-opacity:0;stroke:#000000;stroke-width:2.04399991;stroke-miterlimit:4;stroke-dasharray:8.17599964, 8.17599964;stroke-dashoffset:0"
      id="e1_rectangle-6-2-0-6-36"
      width="37.146812"
      height="79.956139" />
   <rect
-     x="1231.3899"
-     y="79.887733"
+     x="1229.9817"
+     y="430.53479"
      style="fill:#f0e68c;fill-opacity:0;stroke:#000000;stroke-width:2.04399991;stroke-miterlimit:4;stroke-dasharray:8.17599964, 8.17599964;stroke-dashoffset:0"
      id="e1_rectangle-7-9-9-2-1"
      width="37.146812"
      height="79.956139" />
   <rect
-     x="1268.5367"
-     y="79.887764"
+     x="1267.1285"
+     y="430.53482"
      style="fill:#f0e68c;fill-opacity:0;stroke:#000000;stroke-width:2.04399991;stroke-miterlimit:4;stroke-dasharray:8.17599964, 8.17599964;stroke-dashoffset:0"
      id="e1_rectangle-7-9-9-2-1-0"
      width="37.146812"
@@ -1013,21 +1039,4 @@
          height="665.38446"
          x="-101.39192"
          y="-14.340484" /></flowRegion><flowPara
-       id="flowPara8703" /></flowRoot>  <rect
-     x="938.01758"
-     y="243.24072"
-     style="fill:#f0e68c;fill-opacity:0;stroke:#000000;stroke-width:2.04399991;stroke-miterlimit:4;stroke-dasharray:8.17599964, 8.17599964;stroke-dashoffset:0"
-     id="e1_rectangle-6-2-0-6-5-6"
-     width="37.146812"
-     height="79.956139" />
-  <text
-     xml:space="preserve"
-     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:40px;line-height:1.25;font-family:'Comic Sans MS';-inkscape-font-specification:'Comic Sans MS';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
-     x="1198.5991"
-     y="212.86053"
-     id="text4876-1"><tspan
-       sodipodi:role="line"
-       id="tspan4874-5"
-       x="1198.5991"
-       y="212.86053">tail</tspan></text>
-</svg>
+       id="flowPara8703"></flowPara></flowRoot></svg>

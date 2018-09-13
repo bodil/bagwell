@@ -4,7 +4,7 @@ import image from "pink/modules/image";
 import highlight from "pink/modules/highlight";
 import tree from "./tree";
 import repl from "pink-repl";
-import rust from "./client/rust";
+import typescript from "pink-repl-typescript";
 import "./screen.less";
 import "pink/css/themes/league.less";
 import "highlight.js/styles/github.css";
@@ -14,5 +14,5 @@ new Pink("#slides", {
   image,
   highlight,
   tree,
-  repl: repl({ rust })
+  repl: repl({ts: typescript})
 });

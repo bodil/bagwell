@@ -1,303 +1,608 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
 
-    <title>PERSISTENCE WILL BE REWARDED</title>
-    <meta name="author" content="Bodil">
+<head>
+  <meta charset="utf-8">
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
-    <style type="text/css">
-      body { visibility: hidden; background: black; }
-    </style>
-  </head>
-  <body>
+  <title>MEETINGS WITH REMARKABLE TREES</title>
+  <meta name="author" content="Bodil">
 
-    <div id="slides" data-background="m/knuth.jpg">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <style type="text/css">
+    body {
+      visibility: hidden;
+      background: black;
+    }
+  </style>
+</head>
 
-      <section class="title">
-        <p>immutable.rs</p>
-        <h1>PERSISTENCE</h1>
-        <h2>WILL BE</h2>
-        <h1>REWARDED</h1>
-        <p>@bodil</p>
-      </section>
+<body>
 
-      <section class="title">
-      </section>
+  <div id="slides" data-background="m/knuth.jpg">
 
-      <section>
-        <h3>WHAT IS A DATA STRUCTURE?</h3>
-        <p class="fragment">A way of organising data so that it can be accessed and modified efficiently.</p>
-        <li class="fragment" style="margin-top: 0.5em">list</li>
-        <li class="fragment">map</li>
-      </section>
+    <section class="title">
+      <h1>MEETINGS</h1>
+      <h2>with</h2>
+      <h1>REMARKABLE TREES</h1>
+      <p>@bodil</p>
+    </section>
 
-      <section>
-        <h3>MUTABLE VS IMMUTABLE?</h3>
-        <p>A mutable value can change (like Vec), but an immutable value is the same forever (like i32).</p>
-      </section>
+    <section>
+      <h3>PERSISTENT DATA STRUCTURES</h3>
+      <p>A data structure that <i>persists its current state</i> when changed.</p>
+    </section>
 
-      <section>
-        <h3>PERSISTENT DATA STRUCTURES</h3>
-        <p>A data structure that <i>persists its current state</i> when changed.</p>
-      </section>
+    <section>
+      <h3>THE BAGWELL TRIE</h3>
+      <p class="fragment">How is vector formed?</p>
+      <p class="fragment">What's the problem with cons lists anyway?</p>
+    </section>
 
-      <section>
-        <h3>COMPLEXITY</h3>
-        <p>We need a way to talk about the efficiency of operations on data structures.</p>
-        <p class="fragment">Big O notation!</p>
-      </section>
+    <section>
+      <h3>COMPLEXITY</h3>
+      <p>We need a way to talk about the efficiency of operations on data structures.</p>
+      <p class="fragment">Big O notation!</p>
+    </section>
 
-      <section>
-        <h3>CONSTANT TIME: O(1)</h3>
-        <p>Same amount of work regardless of the size of the data structure.</p>
-      </section>
+    <section>
+      <h3>CONSTANT TIME: O(1)</h3>
+      <p>Same amount of work regardless of the size of the data structure.</p>
+    </section>
 
-      <section>
-        <h3>LINEAR TIME: O(n)</h3>
-        <p>Number of operations proportional to the size <i>(n)</i> of the data structure.</p>
-      </section>
+    <section>
+      <h3>LINEAR TIME: O(n)</h3>
+      <p>Number of operations proportional to the size <i>(n)</i> of the data structure.</p>
+    </section>
 
-      <section>
-        <h3>LOGARITHMIC TIME: O(log n)</h3>
-        <p>Number of operations logarithmic to the size of the data structure.</p>
-      </section>
+    <section>
+      <h3>LOGARITHMIC TIME: O(log n)</h3>
+      <p>Number of operations logarithmic to the size of the data structure.</p>
+    </section>
 
-      <section>
-        <h3>BIG O NOTATION</h3>
-        <p>O(1) = constant time</p>
-        <p>O(log n) = logarithmic time</p>
-        <p>O(n) = linear time</p>
-        <p class="fragment">O(n log n) = linear × logarithmic time</p>
-      </section>
+    <section>
+      <h3>BIG O NOTATION</h3>
+      <p>O(1) = constant time</p>
+      <p>O(log n) = logarithmic time</p>
+      <p>O(n) = linear time</p>
+      <p class="fragment">O(n log n) = linear × logarithmic time</p>
+    </section>
 
-      <section>
-        <h3>AMORTISATION</h3>
-        <p>Spreading the cost over several operations.</p>
-      </section>
+    <section>
+      <h3>AMORTISATION</h3>
+      <p>Spreading the cost over several operations.</p>
+    </section>
 
-      <section class="photo" data-image="m/array.svg">
-      </section>
+    <section class="photo" data-image="m/array.svg">
+    </section>
 
-      <section class="photo" data-image="m/array-capacity.svg">
-      </section>
+    <section class="photo" data-image="m/array-capacity.svg">
+    </section>
 
-      <section class="photo" data-image="m/cons-cell.svg">
-      </section>
+    <section class="photo" data-image="m/cons-cell.svg">
+    </section>
 
-      <section class="photo" data-image="m/cons-list.svg">
-      </section>
+    <section class="photo" data-image="m/cons-list.svg">
+    </section>
 
-      <section class="photo" data-image="m/cons-action.svg">
-      </section>
+    <section class="photo" data-image="m/cons-action.svg">
+    </section>
 
-      <section class="photo" data-image="m/cons-annotated.svg">
-      </section>
+    <section class="photo" data-image="m/cons-annotated.svg">
+    </section>
 
-      <section class="photo blank" data-image="m/ibm704.jpg">
-      </section>
+    <section class="photo blank" data-image="m/ibm704.jpg">
+    </section>
 
-      <section>
-        <h3>THESE NAMES COMPOSE!</h3>
-        <p class="fragment"><i>cadr</i> = car of cdr = second element</p>
-        <p class="fragment"><i>caddr</i> = car of cdr of cdr = third element</p>
-        <p class="fragment"><i>cddr</i> = cdr of cdr = third element onward</p>
-        <p class="fragment"><i>caar</i> = car of car = first element of first element</p>
-      </section>
+    <section>
+      <h3>THESE NAMES COMPOSE!</h3>
+      <p class="fragment"><i>cadr</i> = car of cdr = second element</p>
+      <p class="fragment"><i>caddr</i> = car of cdr of cdr = third element</p>
+      <p class="fragment"><i>cddr</i> = cdr of cdr = third element onward</p>
+      <p class="fragment"><i>caar</i> = car of car = first element of first element</p>
+    </section>
 
-      <section class="photo" data-image="m/dratini.png">
-        <div class="label" style="position: absolute; top: 2em">head →</div>
-        <div class="label" style="position: absolute; bottom: 2em">tail →</div>
-      </section>
+    <section class="photo" data-image="m/dratini.png">
+      <div class="label" style="position: absolute; top: 2em">head →</div>
+      <div class="label" style="position: absolute; bottom: 2em">tail →</div>
+    </section>
 
-      <section class="photo" data-image="m/sudowoodo.png">
-      </section>
+    <section class="photo blank meme" data-image="m/fredkin.jpg">
+      <p class="top">TRIES</p>
+      <p class="bottom small">and the hardest problem in computer science</p>
+    </section>
 
-      <section class="photo" data-image="m/binary-tree.svg">
-      </section>
+    <section>
+      <h3>TRIES</h3>
+      <p>Tries are <i>prefix</i> or <i>radix</i> based search trees.</p>
+    </section>
 
-      <section class="photo" data-image="m/binary-insert.svg">
-      </section>
+    <section class="photo" data-image="m/trie.png">
+    </section>
 
-      <section class="photo" data-image="m/b-tree.svg">
-      </section>
+    <section class="photobg meme" data-image="m/bagwell.jpg">
+      <p class="bottom">Phil Bagwell</p>
+    </section>
 
-      <section class="photo blank meme" data-image="m/fredkin.jpg">
-        <p class="top">TRIES</p>
-        <p class="bottom small">and the hardest problem in computer science</p>
-      </section>
+    <section class="photobg meme" data-image="m/hickey.jpg">
+      <p class="bottom">Rich Hickey</p>
+    </section>
 
-      <section>
-        <h3>TRIES</h3>
-        <p>Tries are <i>prefix</i> or <i>radix</i> based search trees.</p>
-        <p class="fragment">Henceforth: RADIX TREES</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie.svg">
+      <h1 class="fragment" style="background-color:rgba(0,0,0,0.5)">HICKEY TRIE</h1>
+    </section>
 
-      <section class="photo" data-image="m/trie.png">
-      </section>
+    <section class="photo" data-image="m/vector-trie-one.svg">
+    </section>
 
-      <section class="photobg meme" data-image="m/bagwell.jpg">
-        <p class="bottom">Phil Bagwell</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie-two.svg">
+    </section>
 
-      <section class="photo" data-image="m/hamt.svg">
-      </section>
+    <section class="photo" data-image="m/vector-trie-three.svg">
+    </section>
 
-      <section class="photobg meme" data-image="m/hickey.jpg">
-        <p class="bottom">Rich Hickey</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie-four.svg">
+    </section>
 
-      <section class="photo" data-image="m/vector-trie.svg">
-      </section>
+    <section class="photo" data-image="m/vector-trie-five.svg">
+    </section>
 
-      <section>
-        <p>Why can't we just have a data structure without any tradeoffs?</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie-twenty-one.svg">
+    </section>
 
-      <section class="photobg meme" data-image="m/bagwell.jpg">
-        <p class="top small">DO YOU HAVE A MOMENT TO TALK ABOUT</p>
-        <p class="bottom">RELAXED RADIX BALANCED TREES</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie-lookup.svg">
+    </section>
 
-      <section class="photo" data-image="m/rrb-tree.svg">
-      </section>
+    <section data-repl="on">
+      <div class="row">
+        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
+          const BITS = 2;
+          const WIDTH = 1 << BITS;
+          const MASK = WIDTH - 1;
 
-      <section>
-        <h3>RRB TREES</h3>
-        <p>Push/pop: O(logₖ n)</p>
-        <p>Lookup: O(logₖ n)</p>
-        <p>Concat: O(logₖ n)</p>
-        <p>Split: O(logₖ n)</p>
-      </section>
+          function index_for(index, level): number {
+            const bit_offset = level * BITS;
+            return (index >> bit_offset) & MASK;
+          }
+        </div>
+        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
+      </div>
+    </section>
 
-      <section>
-        <h1>WHY?</h1>
-      </section>
+    <section class="photo" data-image="m/vector-trie-join.svg">
+    </section>
 
-      <section>
-        <h3>REASONING</h3>
-        <p>Immutable values make it easier to reason about your program!</p>
-        <p class="fragment">(the Haskell defence)</p>
-      </section>
+    <section data-repl="on">
+      <div class="row">
+        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
+          const BITS = 2;
+          const WIDTH = 1 << BITS;
+          const MASK = WIDTH - 1;
 
-      <section>
-        <h3>THREAD SAFETY</h3>
-        <p>If a value never changes, you can't have race conditions when changing it.</p>
-      </section>
+          function index_for(index, level): number {
+            const bit_offset = level * BITS;
+            return (index >> bit_offset) & MASK;
+          }
 
-      <section>
-        <h3>EVOLVING STATE</h3>
-        <p class="fragment">Recursive algorithms can backtrack easily</p>
-        <p class="fragment">Stateful apps can replay state</p>
-      </section>
+          type Vector = {
+            size: number;
+            level: number;
+            root: TreeNode;
+          };
 
-      <section>
-        <h3>THEY'RE FASTER!</h3>
-        <p class="fragment">Cloning is always O(1)!</p>
-      </section>
+          type TreeNode = any[];
 
-      <section>
-        <h3>SO VEC IS P COOL</h3>
-        <p>Its big O isn't that great, but -</p>
-        <p class="fragment">It's unbeatable with cache locality</p>
-        <p class="fragment">Chunking techniques let us lean on that</p>
-      </section>
+          let test = {
+            size: 6, level: 1,
+            root: [["1","2","3","4"],["5","6"]]
+          };
 
-      <section>
-        <h3>MUTABLE ALWAYS BEATS IMMUTABLE</h3>
-        <p class="fragment">Clojure has "transients" for this.<br>Haskell has the ST monad.</p>
-      </section>
+          function make(): Vector {
+            return { size: 0, level: 0, root: [] };
+          }
 
-      <section data-highlight="on">
-        <h3>🐮 ALL YOU NEED IS COW 🐮</h3>
-        <pre class="rust">
+          function lookup(vec: Vector, index: number): any {
+            return lookup_tree(vec.root, vec.level, index);
+          }
 
-  fn Arc::make_mut(this: &amp;mut Arc&lt;T&gt;) -&gt; &amp;mut T
-        </pre>
-        <h3 class="fragment">🐄 COW IS ALL YOU NEED 🐄</h3>
-      </section>
+          function lookup_tree(node, level, index) {
+            let i = index_for(index, level);
+            if (level == 0) {
+              return node[i];
+            } else {
+              return lookup_tree(node[i], level - 1, index);
+            }
+          }
 
-      <section>
-        <h3>MUTABLE WITH IMMUTABLE GUARANTEES</h3>
-        <p>If you're the sole owner, you're always mutable.</p>
-      </section>
+          function single(level: number, value: any): TreeNode {
+            if (level == 0) {
+              return [value];
+            } else {
+              return [single(level - 1, value)];
+            }
+          }
 
-      <section>
-        <h3>LET'S TALK BIG O</h3>
-        <p>RRB vectors do complex things smarter than Vec</p>
-        <p class="fragment">With chunking, simpler ops can perform at Vec like speeds</p>
-        <p class="fragment">And at small sizes, it literally is Vec!</p>
-        <p class="fragment">Memory footprint is only slightly worse than Vec</p>
-      </section>
+          function push(vec: Vector, value: any): Vector {
+            let result = push_tree(vec.root, vec.level, value);
+            if (result.hasOwnProperty("full")) {
+              let new_top = [vec.root, single(vec.level, value)];
+              return {
+                size: vec.size + 1,
+                level: vec.level + 1,
+                root: new_top
+              };
+            } else {
+              return {
+                size: vec.size + 1,
+                level: vec.level,
+                root: result
+              };
+            }
+          }
 
-      <section>
-        <h3>WHAT ABOUT MAPS</h3>
-        <p>Maps should perform close to std::collections</p>
-        <p class="fragment">…if I've done my job right</p>
-        <p class="fragment">Still a slightly worse memory footprint</p>
-      </section>
+          function push_tree(node, level, value): any {
+            if (level == 0) {
+              if (node.length < WIDTH) {
+                return [...node, value];
+              } else {
+                return { full: true };
+              }
+            } else {
+              let last = node[node.length - 1];
+              let result = push_tree(last, level - 1, value);
+              if (result.hasOwnProperty("full")) {
+                if (node.length >= WIDTH) {
+                  return { full: true };
+                } else {
+                  return [...node, [value]];
+                }
+              } else {
+                let new_node = [...node];
+                new_node[new_node.length - 1] = result;
+                return new_node;
+              }
+            }
+          }
 
-      <section>
-        <h3>DESIGN CHOICES</h3>
-        <p class="fragment">As complete as Haskell <span class="fragment">(and Clojure)</span></p>
-        <p class="fragment">But should feel like Rust</p>
-      </section>
+          function make_count(count: number): Vector {
+            let vec = make();
+            for (let i = 0; i < count; i++) {
+              vec = push(vec, i + 1);
+            }
+            return vec;
+          }
+        </div>
+        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
+      </div>
+    </section>
 
-      <section>
-        <p>Nobody is going to use a library with bad documentation.</p>
-      </section>
+    <section>
+      <h3>HICKEY TRIE BIG O</h3>
+      <p class="fragment">Push/pop back: O(logₖ n)</p>
+      <p class="fragment">Push/pop front: O(n)</p>
+      <p class="fragment">Lookup: O(logₖ n)</p>
+      <p class="fragment">Concat: O(n)</p>
+      <p class="fragment">Split: O(n)</p>
+    </section>
 
-      <section>
-        <h3>ABOUT THE ARCS</h3>
-        <p>Im wraps values in <i>Arc</i> to avoid a Clone constraint.</p>
-        <p class="fragment">It's slow, so maybe leave it to the user.</p>
-        <p class="fragment"><i>Arc</i>-less seems to speed things up a LOT!</p>
-      </section>
+    <section class="photo" data-image="m/vector-trie-tail.svg">
+    </section>
 
-      <section class="title" data-background="m/belka-strelka.jpg">
-        <h1>Thank you!</h1>
-        <p><a href="http://immutable.rs">immutable.rs</a></p>
-        <p><a href="https://bodil.lol/persistence/">bodil.lol/persistence/</a></p>
-        <p>@bodil</p>
-      </section>
+    <section>
+      <h3>HICKEY TRIES: FINAL VERDICT</h3>
+      <p>Push/pop back: O(1) amortised</p>
+      <p>Push/pop front: O(n)</p>
+      <p>Lookup: O(logₖ n)</p>
+      <p>Concat: O(n)</p>
+      <p>Split: O(n)</p>
+    </section>
 
-      <section class="photo blank meme" data-background="m/belka-strelka.jpg">
-        <p class="bottom small">BELKA & STRELKA</p>
-      </section>
+    <section class="photobg" data-image="m/sad-pupper.jpg">
+    </section>
 
-      <section class="reading-list" data-background="m/belka-strelka.jpg">
-        <h3>READING LIST</h3>
-        <p>Okasaki: <i>Purely Functional Data Structures</i></p>
-        <p>L'Orange: <i>Understanding Clojure's Vectors</i></p>
-        <p>Bagwell: <i>Ideal Hash Trees</i></p>
-        <p>Hinze, Paterson: <i>Finger Trees</i></p>
-        <p>Acar, Charguéraud, Rainey: <i>Chunked Sequences</i></p>
-        <p>Stucki, Rompf, Ureche, Bagwell: <i>RRB Vector</i></p>
-      </section>
+    <section>
+      <h3>FINGER TREES</h3>
+      <p>Finger trees solve split/join but lose fast lookup</p>
+    </section>
 
-      <!-- <section data-repl="on">
-           <div class="row">
-           <div data-id="rust-ed" data-lang="rust" data-type="editor" data-target="rust-out">
-           #[macro_use]
-           extern crate im;
+    <section class="photobg meme" data-image="m/bagwell.jpg">
+      <p class="top small">DO YOU HAVE A MOMENT TO TALK ABOUT</p>
+      <p class="bottom">RELAXED RADIX BALANCED TREES</p>
+    </section>
 
-           fn main() {
-           let greet_the_fathers = vector![
-           "Hello Joe!",
-           "Hello Mike!",
-           "Hello Robert!"
-           ];
-           for words in greet_the_fathers {
-           println!("{}", words);
-           }
-           }
-           </div>
-           <div data-id="rust-out" data-lang="rust" data-type="repl" data-target="rust-out"></div>
-           </div>
-           </section> -->
+    <section class="photo" data-image="m/rrb-tree.svg">
+    </section>
 
-      <script type="text/javascript" src="dist/pink/pink.js"></script>
-  </body>
+    <section class="photo" data-image="m/rrb-tree-join.svg">
+    </section>
+
+    <section class="photo" data-image="m/rrb-tree-joined.svg">
+    </section>
+
+    <section data-repl="on">
+      <div class="row">
+        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
+          const BITS = 2;
+          const WIDTH = 1 << BITS;
+          const MASK = WIDTH - 1;
+
+          function size_up_to(index, level, table): number {
+            if (index == 0) {
+              return 0;
+            }
+            if (level == 0) {
+              return index;
+            }
+            if (table) {
+              return table[index - 1];
+            }
+            return index * Math.pow(WIDTH, level);
+          }
+
+          function index_for(index, level, table): number {
+            let guess = index / Math.pow(WIDTH, level);
+            guess = Math.floor(guess);
+            if (table) {
+              while (table[guess] <= index) {
+                guess += 1;
+              }
+            }
+            return guess;
+          }
+
+          type Vector = {
+            size: number;
+            level: number;
+            root: TreeNode;
+          };
+
+          type TreeNode = any[];
+
+          let test = {
+            size: 6, level: 1,
+            root: [["1","2","3","4"],["5","6"]]
+          };
+
+          function make(): Vector {
+            return { size: 0, level: 0, root: [] };
+          }
+
+          function lookup(vec: Vector, index: number): any {
+            return lookup_tree(vec.root, vec.level, index);
+          }
+
+          function lookup_tree(node, level, index) {
+            let i = index_for(index, level);
+            if (level == 0) {
+              return node[i];
+            } else {
+              return lookup_tree(node[i], level - 1, index);
+            }
+          }
+
+        </div>
+        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
+      </div>
+    </section>
+
+    <section>
+      <h3>RRB TREES</h3>
+      <p>Push/pop: O(logₖ n)</p>
+      <p>Lookup: O(logₖ n)</p>
+      <p>Concat: O(logₖ n)</p>
+      <p>Split: O(logₖ n)</p>
+    </section>
+
+    <section class="title" data-background="m/belka-strelka.jpg">
+      <h1>Thank you!</h1>
+      <p><a href="https://bodil.lol/bagwell/">bodil.lol/bagwell/</a></p>
+      <p><a href="http://immutable.rs">immutable.rs</a></p>
+      <p>@bodil</p>
+    </section>
+
+    <section class="photo blank meme" data-background="m/belka-strelka.jpg">
+      <p class="bottom small">BELKA & STRELKA</p>
+    </section>
+
+    <section class="reading-list" data-background="m/belka-strelka.jpg">
+      <h3>READING LIST</h3>
+      <p>Okasaki: <i>Purely Functional Data Structures</i></p>
+      <p>L'Orange: <i>Understanding Clojure's Vectors</i></p>
+      <p>Bagwell: <i>Ideal Hash Trees</i></p>
+      <p>Hinze, Paterson: <i>Finger Trees</i></p>
+      <p>Acar, Charguéraud, Rainey: <i>Chunked Sequences</i></p>
+      <p>Stucki, Rompf, Ureche, Bagwell: <i>RRB Vector</i></p>
+    </section>
+
+    <section data-repl="on">
+      <div class="row">
+        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
+          const BITS = 2;
+          const WIDTH = 1 << BITS;
+          const MASK = WIDTH - 1;
+
+          function index_for(index, level): number {
+            const bit_offset = level * BITS;
+            return (index >> bit_offset) & MASK;
+          }
+
+          type Vector = {
+            size: number;
+            level: number;
+            root: TreeNode;
+          };
+
+          type TreeNode = any[];
+
+          let test = {
+            size: 6, level: 1,
+            root: [["1","2","3","4"],["5","6"]]
+          };
+
+          function make(): Vector {
+            return { size: 0, level: 0, root: [] };
+          }
+
+          function lookup(vec: Vector, index: number): any {
+            return lookup_tree(vec.root, vec.level, index);
+          }
+
+          function lookup_tree(node, level, index) {
+            let i = index_for(index, level);
+            if (level == 0) {
+              return node[i];
+            } else {
+              return lookup_tree(node[i], level - 1, index);
+            }
+          }
+
+          function single(level: number, value: any): TreeNode {
+            if (level == 0) {
+              return [value];
+            } else {
+              return [single(level - 1, value)];
+            }
+          }
+
+          function push(vec: Vector, value: any): Vector {
+            let result = push_tree(vec.root, vec.level, value);
+            if (result.hasOwnProperty("full")) {
+              let new_top = [vec.root, single(vec.level, value)];
+              return {
+                size: vec.size + 1,
+                level: vec.level + 1,
+                root: new_top
+              };
+            } else {
+              return {
+                size: vec.size + 1,
+                level: vec.level,
+                root: result
+              };
+            }
+          }
+
+          function push_tree(node, level, value): any {
+            if (level == 0) {
+              if (node.length < WIDTH) {
+                return [...node, value];
+              } else {
+                return { full: true };
+              }
+            } else {
+              let last = node[node.length - 1];
+              let result = push_tree(last, level - 1, value);
+              if (result.hasOwnProperty("full")) {
+                if (node.length >= WIDTH) {
+                  return { full: true };
+                } else {
+                  return [...node, [value]];
+                }
+              } else {
+                let new_node = [...node];
+                new_node[new_node.length - 1] = result;
+                return new_node;
+              }
+            }
+          }
+
+          function make_count(count: number): Vector {
+            let vec = make();
+            for (let i = 0; i < count; i++) {
+              vec = push(vec, i + 1);
+            }
+            return vec;
+          }
+
+          function append(left: Vector, right: Vector) {
+            for (let i = 0; i < right.size; i++) {
+              let value = lookup(right, i);
+              left = push(left, value);
+            }
+            return left;
+          }
+        </div>
+        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
+      </div>
+    </section>
+
+    <section data-repl="on">
+      <div class="row">
+        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
+          const BITS = 2;
+          const WIDTH = 1 << BITS;
+          const MASK = WIDTH - 1;
+
+          function size_up_to(index, level, table): number {
+            if (index == 0) {
+              return 0;
+            }
+            if (level == 0) {
+              return index;
+            }
+            if (table) {
+              return table[index - 1];
+            }
+            return index * Math.pow(WIDTH, level);
+          }
+
+          function index_for(index, level, table): number {
+            let guess = index / Math.pow(WIDTH, level);
+            guess = Math.floor(guess);
+            if (table) {
+              while (table[guess] <= index) {
+                guess += 1;
+              }
+            }
+            return guess;
+          }
+
+          type Vector = {
+            size: number;
+            level: number;
+            root: TreeNode;
+          };
+
+          type TreeNode = {
+            sizes: number[],
+            children: any[],
+          };
+
+          let test = {
+            size: 6, level: 1,
+            root: {sizes: [3, 6], children: [
+              {sizes: null, children: ["1","2","3"]},
+              {sizes: null, children: ["4","5","6"]},
+            ]}
+          };
+
+          function make(): Vector {
+            return { size: 0, level: 0, root: {
+              sizes: [], children: []
+            } };
+          }
+
+          function lookup(vec: Vector, index: number): any {
+            return lookup_tree(vec.root, vec.level, index);
+          }
+
+          function lookup_tree(node, level, index) {
+            let i = index_for(index, level, node.sizes);
+            if (level == 0) {
+              return node.children[i];
+            } else {
+              return lookup_tree(
+                node.children[i], level - 1,
+                index - size_up_to(i, level, node.sizes)
+              );
+            }
+          }
+        </div>
+        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript" src="dist/pink/pink.js"></script>
+</body>
+
 </html>
