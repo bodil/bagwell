@@ -92,6 +92,8 @@
     </section>
 
     <section class="photo blank" data-image="m/ibm704.jpg">
+      <p class="shade fragment"><i>car</i> = contents of address register</p>
+      <p class="shade fragment"><i>cdr</i> = contents of decrement register</p>
     </section>
 
     <section>
@@ -129,7 +131,19 @@
     </section>
 
     <section class="photo" data-image="m/vector-trie.svg">
-      <h1 class="fragment" style="background-color:rgba(0,0,0,0.5)">HICKEY TRIE</h1>
+      <h1 class="fragment" style="background-color:rgba(0,0,0,0.5)">PersistentVector</h1>
+    </section>
+
+    <section class="photo" data-image="m/vector-trie.svg">
+      <h1 style="background-color:rgba(0,0,0,0.5)">BITMAPPED<br />VECTOR TRIE</h1>
+    </section>
+
+    <section class="photo" data-image="m/vector-trie.svg">
+      <h1 style="background-color:rgba(0,0,0,0.5)">PERSISTENT<br />BIT-PARTITIONED<br />VECTOR TRIE</h1>
+    </section>
+
+    <section class="photo" data-image="m/vector-trie.svg">
+      <h1 style="background-color:rgba(0,0,0,0.5)">HICKEY TRIE</h1>
     </section>
 
     <section class="photo" data-image="m/vector-trie-one.svg">
@@ -148,132 +162,16 @@
     </section>
 
     <section class="photo" data-image="m/vector-trie-twenty-one.svg">
+      <div class="fragment">
+        <p class="shade">INVARIANT:</p>
+        <p class="shade">Only the rightmost node at each level can be underfull.</p>
+      </div>
     </section>
 
     <section class="photo" data-image="m/vector-trie-lookup.svg">
     </section>
 
-    <section data-repl="on">
-      <div class="row">
-        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
-          const BITS = 2;
-          const WIDTH = 1 << BITS;
-          const MASK = WIDTH - 1;
-
-          function index_for(index, level): number {
-            const bit_offset = level * BITS;
-            return (index >> bit_offset) & MASK;
-          }
-        </div>
-        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
-      </div>
-    </section>
-
     <section class="photo" data-image="m/vector-trie-join.svg">
-    </section>
-
-    <section data-repl="on">
-      <div class="row">
-        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
-          const BITS = 2;
-          const WIDTH = 1 << BITS;
-          const MASK = WIDTH - 1;
-
-          function index_for(index, level): number {
-            const bit_offset = level * BITS;
-            return (index >> bit_offset) & MASK;
-          }
-
-          type Vector = {
-            size: number;
-            level: number;
-            root: TreeNode;
-          };
-
-          type TreeNode = any[];
-
-          let test = {
-            size: 6, level: 1,
-            root: [["1","2","3","4"],["5","6"]]
-          };
-
-          function make(): Vector {
-            return { size: 0, level: 0, root: [] };
-          }
-
-          function lookup(vec: Vector, index: number): any {
-            return lookup_tree(vec.root, vec.level, index);
-          }
-
-          function lookup_tree(node, level, index) {
-            let i = index_for(index, level);
-            if (level == 0) {
-              return node[i];
-            } else {
-              return lookup_tree(node[i], level - 1, index);
-            }
-          }
-
-          function single(level: number, value: any): TreeNode {
-            if (level == 0) {
-              return [value];
-            } else {
-              return [single(level - 1, value)];
-            }
-          }
-
-          function push(vec: Vector, value: any): Vector {
-            let result = push_tree(vec.root, vec.level, value);
-            if (result.hasOwnProperty("full")) {
-              let new_top = [vec.root, single(vec.level, value)];
-              return {
-                size: vec.size + 1,
-                level: vec.level + 1,
-                root: new_top
-              };
-            } else {
-              return {
-                size: vec.size + 1,
-                level: vec.level,
-                root: result
-              };
-            }
-          }
-
-          function push_tree(node, level, value): any {
-            if (level == 0) {
-              if (node.length < WIDTH) {
-                return [...node, value];
-              } else {
-                return { full: true };
-              }
-            } else {
-              let last = node[node.length - 1];
-              let result = push_tree(last, level - 1, value);
-              if (result.hasOwnProperty("full")) {
-                if (node.length >= WIDTH) {
-                  return { full: true };
-                } else {
-                  return [...node, [value]];
-                }
-              } else {
-                let new_node = [...node];
-                new_node[new_node.length - 1] = result;
-                return new_node;
-              }
-            }
-          }
-
-          function make_count(count: number): Vector {
-            let vec = make();
-            for (let i = 0; i < count; i++) {
-              vec = push(vec, i + 1);
-            }
-            return vec;
-          }
-        </div>
-        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
-      </div>
     </section>
 
     <section>
@@ -285,7 +183,22 @@
       <p class="fragment">Split: O(n)</p>
     </section>
 
-    <section class="photo" data-image="m/vector-trie-tail.svg">
+    <section class="photo" data-image="m/vector-trie-tail-0.svg">
+    </section>
+
+    <section class="photo" data-image="m/vector-trie-tail-1.svg">
+    </section>
+
+    <section class="photo" data-image="m/vector-trie-tail-2.svg">
+    </section>
+
+    <section class="photo" data-image="m/vector-trie-tail-3.svg">
+    </section>
+
+    <section class="photo" data-image="m/vector-trie-tail-4.svg">
+    </section>
+
+    <section class="photo" data-image="m/vector-trie-tail-append.svg">
     </section>
 
     <section>
@@ -297,17 +210,46 @@
       <p>Split: O(n)</p>
     </section>
 
-    <section class="photobg" data-image="m/sad-pupper.jpg">
+    <section class="photo" data-image="m/vector-trie-five.svg">
+    </section>
+
+    <section class="photo" data-image="m/immutablejs-front.svg">
+    </section>
+
+    <section class="photo" data-image="m/immutablejs-front-add.svg">
+      <div class="fragment">
+        <p class="shade">INVARIANT:</p>
+        <p class="shade">Rightmost and leftmost nodes can be underfull.</p>
+      </div>
     </section>
 
     <section>
-      <h3>FINGER TREES</h3>
-      <p>Finger trees solve split/join but lose fast lookup</p>
+      <h3>IMMUTABLE.JS TRIES</h3>
+      <p>Push/pop back: O(logₖ n)</p>
+      <p>Push/pop front: O(logₖ n)</p>
+      <p>Lookup: O(logₖ n)</p>
+      <p>Concat: O(n)</p>
+      <p>Split: O(logₖ n)</p>
+    </section>
+
+    <section>
+      <h3>IM.JS WITH HEAD + TAIL</h3>
+      <p>Push/pop back: O(1) amortised</p>
+      <p>Push/pop front: O(1) amortised</p>
+      <p>Lookup: O(logₖ n)</p>
+      <p>Concat: O(n)</p>
+      <p>Split: O(logₖ n)</p>
+    </section>
+
+    <section class="photobg" data-image="m/sad-pupper.jpg">
     </section>
 
     <section class="photobg meme" data-image="m/bagwell.jpg">
       <p class="top small">DO YOU HAVE A MOMENT TO TALK ABOUT</p>
       <p class="bottom">RELAXED RADIX BALANCED TREES</p>
+    </section>
+
+    <section class="photo" data-image="m/rrb-tree-balanced.svg">
     </section>
 
     <section class="photo" data-image="m/rrb-tree.svg">
@@ -319,75 +261,20 @@
     <section class="photo" data-image="m/rrb-tree-joined.svg">
     </section>
 
-    <section data-repl="on">
-      <div class="row">
-        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
-          const BITS = 2;
-          const WIDTH = 1 << BITS;
-          const MASK = WIDTH - 1;
-
-          function size_up_to(index, level, table): number {
-            if (index == 0) {
-              return 0;
-            }
-            if (level == 0) {
-              return index;
-            }
-            if (table) {
-              return table[index - 1];
-            }
-            return index * Math.pow(WIDTH, level);
-          }
-
-          function index_for(index, level, table): number {
-            let guess = index / Math.pow(WIDTH, level);
-            guess = Math.floor(guess);
-            if (table) {
-              while (table[guess] <= index) {
-                guess += 1;
-              }
-            }
-            return guess;
-          }
-
-          type Vector = {
-            size: number;
-            level: number;
-            root: TreeNode;
-          };
-
-          type TreeNode = any[];
-
-          let test = {
-            size: 6, level: 1,
-            root: [["1","2","3","4"],["5","6"]]
-          };
-
-          function make(): Vector {
-            return { size: 0, level: 0, root: [] };
-          }
-
-          function lookup(vec: Vector, index: number): any {
-            return lookup_tree(vec.root, vec.level, index);
-          }
-
-          function lookup_tree(node, level, index) {
-            let i = index_for(index, level);
-            if (level == 0) {
-              return node[i];
-            } else {
-              return lookup_tree(node[i], level - 1, index);
-            }
-          }
-
-        </div>
-        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
-      </div>
+    <section class="photo" data-image="m/rrb-tree-split.svg">
     </section>
 
     <section>
       <h3>RRB TREES</h3>
       <p>Push/pop: O(logₖ n)</p>
+      <p>Lookup: O(logₖ n)</p>
+      <p>Concat: O(logₖ n)</p>
+      <p>Split: O(logₖ n)</p>
+    </section>
+
+    <section>
+      <h3>RRB TREES WITH HEAD + TAIL</h3>
+      <p>Push/pop: O(1) amortised</p>
       <p>Lookup: O(logₖ n)</p>
       <p>Concat: O(logₖ n)</p>
       <p>Split: O(logₖ n)</p>
@@ -406,200 +293,12 @@
 
     <section class="reading-list" data-background="m/belka-strelka.jpg">
       <h3>READING LIST</h3>
-      <p>Okasaki: <i>Purely Functional Data Structures</i></p>
-      <p>L'Orange: <i>Understanding Clojure's Vectors</i></p>
       <p>Bagwell: <i>Ideal Hash Trees</i></p>
-      <p>Hinze, Paterson: <i>Finger Trees</i></p>
-      <p>Acar, Charguéraud, Rainey: <i>Chunked Sequences</i></p>
+      <p>L'Orange: <i>Understanding Clojure's Vectors</i></p>
       <p>Stucki, Rompf, Ureche, Bagwell: <i>RRB Vector</i></p>
-    </section>
-
-    <section data-repl="on">
-      <div class="row">
-        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
-          const BITS = 2;
-          const WIDTH = 1 << BITS;
-          const MASK = WIDTH - 1;
-
-          function index_for(index, level): number {
-            const bit_offset = level * BITS;
-            return (index >> bit_offset) & MASK;
-          }
-
-          type Vector = {
-            size: number;
-            level: number;
-            root: TreeNode;
-          };
-
-          type TreeNode = any[];
-
-          let test = {
-            size: 6, level: 1,
-            root: [["1","2","3","4"],["5","6"]]
-          };
-
-          function make(): Vector {
-            return { size: 0, level: 0, root: [] };
-          }
-
-          function lookup(vec: Vector, index: number): any {
-            return lookup_tree(vec.root, vec.level, index);
-          }
-
-          function lookup_tree(node, level, index) {
-            let i = index_for(index, level);
-            if (level == 0) {
-              return node[i];
-            } else {
-              return lookup_tree(node[i], level - 1, index);
-            }
-          }
-
-          function single(level: number, value: any): TreeNode {
-            if (level == 0) {
-              return [value];
-            } else {
-              return [single(level - 1, value)];
-            }
-          }
-
-          function push(vec: Vector, value: any): Vector {
-            let result = push_tree(vec.root, vec.level, value);
-            if (result.hasOwnProperty("full")) {
-              let new_top = [vec.root, single(vec.level, value)];
-              return {
-                size: vec.size + 1,
-                level: vec.level + 1,
-                root: new_top
-              };
-            } else {
-              return {
-                size: vec.size + 1,
-                level: vec.level,
-                root: result
-              };
-            }
-          }
-
-          function push_tree(node, level, value): any {
-            if (level == 0) {
-              if (node.length < WIDTH) {
-                return [...node, value];
-              } else {
-                return { full: true };
-              }
-            } else {
-              let last = node[node.length - 1];
-              let result = push_tree(last, level - 1, value);
-              if (result.hasOwnProperty("full")) {
-                if (node.length >= WIDTH) {
-                  return { full: true };
-                } else {
-                  return [...node, [value]];
-                }
-              } else {
-                let new_node = [...node];
-                new_node[new_node.length - 1] = result;
-                return new_node;
-              }
-            }
-          }
-
-          function make_count(count: number): Vector {
-            let vec = make();
-            for (let i = 0; i < count; i++) {
-              vec = push(vec, i + 1);
-            }
-            return vec;
-          }
-
-          function append(left: Vector, right: Vector) {
-            for (let i = 0; i < right.size; i++) {
-              let value = lookup(right, i);
-              left = push(left, value);
-            }
-            return left;
-          }
-        </div>
-        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
-      </div>
-    </section>
-
-    <section data-repl="on">
-      <div class="row">
-        <div data-id="ts-ed" data-lang="ts" data-type="editor" data-target="ts-repl">
-          const BITS = 2;
-          const WIDTH = 1 << BITS;
-          const MASK = WIDTH - 1;
-
-          function size_up_to(index, level, table): number {
-            if (index == 0) {
-              return 0;
-            }
-            if (level == 0) {
-              return index;
-            }
-            if (table) {
-              return table[index - 1];
-            }
-            return index * Math.pow(WIDTH, level);
-          }
-
-          function index_for(index, level, table): number {
-            let guess = index / Math.pow(WIDTH, level);
-            guess = Math.floor(guess);
-            if (table) {
-              while (table[guess] <= index) {
-                guess += 1;
-              }
-            }
-            return guess;
-          }
-
-          type Vector = {
-            size: number;
-            level: number;
-            root: TreeNode;
-          };
-
-          type TreeNode = {
-            sizes: number[],
-            children: any[],
-          };
-
-          let test = {
-            size: 6, level: 1,
-            root: {sizes: [3, 6], children: [
-              {sizes: null, children: ["1","2","3"]},
-              {sizes: null, children: ["4","5","6"]},
-            ]}
-          };
-
-          function make(): Vector {
-            return { size: 0, level: 0, root: {
-              sizes: [], children: []
-            } };
-          }
-
-          function lookup(vec: Vector, index: number): any {
-            return lookup_tree(vec.root, vec.level, index);
-          }
-
-          function lookup_tree(node, level, index) {
-            let i = index_for(index, level, node.sizes);
-            if (level == 0) {
-              return node.children[i];
-            } else {
-              return lookup_tree(
-                node.children[i], level - 1,
-                index - size_up_to(i, level, node.sizes)
-              );
-            }
-          }
-        </div>
-        <div data-id="ts-repl" data-lang="ts" data-type="repl" data-target="ts-ed"></div>
-      </div>
+      <br />
+      <p>Okasaki: <i>Purely Functional Data Structures</i></p>
+      <p>Acar, Charguéraud, Rainey: <i>Chunked Sequences</i></p>
     </section>
 
     <script type="text/javascript" src="dist/pink/pink.js"></script>
